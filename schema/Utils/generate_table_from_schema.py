@@ -10,6 +10,12 @@ This will:
  - create master table (apply PK if marked, plus audit columns from config.AUDIT_COLUMNS)
 """
 import argparse, json, re
+import sys
+from pathlib import Path
+
+# Add current directory to path for imports
+sys.path.insert(0, str(Path(__file__).parent))
+
 from MF_Data_Schemas.Schema_list import Table_list
 from audit_columns_config import AUDIT_COLUMNS
 from mf_data_constants import SCHEMA_STAGING, STAGE_SUFFIX
